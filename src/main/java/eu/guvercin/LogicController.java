@@ -47,7 +47,7 @@ public class LogicController implements GameController {
 	// Method to print a separator with length n
 	public static void printSeparator(int n) {
 		for(int i = 0; i < n; i++) {
-			System.out.print("-");
+			System.out.print("_");
 		}
 		System.out.println();
 	}
