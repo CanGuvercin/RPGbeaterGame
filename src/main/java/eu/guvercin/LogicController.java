@@ -33,11 +33,17 @@ public class LogicController implements GameController {
 	
 	// Method to simulate clearing out the console
 	public static void clearConsole() {
-		for(int i = 0; i < 100; i++) {
-			System.out.println();
+		try {
+			if (System.getProperty("os.name").contains("Windows"))
+				new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+			else
+				new ProcessBuilder("clear").inheritIO().start().waitFor();
+		} catch (Exception e) {
+			System.out.println("Error clearing console");
 		}
 	}
-	
+
+
 	// Method to print a separator with length n
 	public static void printSeparator(int n) {
 		for(int i = 0; i < n; i++) {
