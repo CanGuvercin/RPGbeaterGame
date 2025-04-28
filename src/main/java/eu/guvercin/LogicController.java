@@ -9,11 +9,24 @@ public class LogicController implements GameController {
 	static Player player;
 	
 	// Constants -> Random ENCOUNTERS, Enemy names and Story elements
-	private static final String[] ENCOUNTERS = {"Batalha", "Batalha", "Batalha", "Descanso", "Descanso"};
-	public static final String[] ENEMIES = {"Ogro", "Ogro", "Goblin", "Goblin", "Elemental de Pedra"};
-	public static final String[] PLACES = {"Montanhas Eternas", "Terras Assombradas", "Castelo do Imperador Malvado", "Sala do Trono"};
+	private static final String[] ENCOUNTERS = {
+			"Battle", "Battle", "Battle", "Rest", "Rest"
+	};
+
+	public static final String[] ENEMIES = {
+			"Ogre", "Ogre", "Goblin", "Goblin", "Stone Elemental"
+	};
+
+	public static final String[] PLACES = {
+			"Eternal Mountains",
+			"Haunted Lands",
+			"Castle of the Evil Emperor",
+			"Throne Room"
+	};
+
 	public static int place = 0, act = 1;
-	
+
+
 	// Method to get user input from console
 	public static int readInt(String prompt, int userChoices) {
 		int input;
