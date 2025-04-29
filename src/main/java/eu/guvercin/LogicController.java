@@ -84,49 +84,52 @@ public class LogicController implements GameController {
 	public void startGame() {
 		boolean nameSet = false;
 		String name;
+
 		// Print title screen
-		// clearConsole();
+		// clearConsole(); // İstersen aktif edebilirsin
 		printSeparator(40);
 		printSeparator(30);
-		System.out.println("ERA DO IMPERADOR MALVADO");
-		System.out.println("RPG DE DIALOGO POR COLEGAS DA UNIP PARA APS");
+		System.out.println("EMPEROR MAY CRY");
+		System.out.println("RPG GAME TO BEAT EVIL EMPEROR");
 		printSeparator(30);
 		printSeparator(40);
 		anythingToContinue();
-		
+
 		// Getting the player name
 		do {
 			clearConsole();
-			printHeading("Qual e o seu nome?");
+			printHeading("What is your name?");
 			name = scanner.next();
-			// Asking the player if he wants to correct his choice
+
+			// Asking the player if he wants to confirm his choice
 			clearConsole();
-			printHeading("Seu nome e " + name + ".\nEsta correto?");
-			System.out.println("(1) Sim!");
-			System.out.println("(2) Nao, eu quero trocar meu nome.");
-			
+			printHeading("Your name is " + name + ".\nIs that correct?");
+			System.out.println("(1) Yes!");
+			System.out.println("(2) No, I want to change my name.");
+
 			int input = readInt("-> ", 2);
 			if (input == 1) {
 				nameSet = true;
 			}
 		} while (!nameSet);
-		
+
 		// Print story intro
 		Story.printIntro();
-		
+
 		// Create new player object with the name
 		player = new Player(name);
-		
+
 		// Print first story act intro
 		Story.printFirstActIntro();
-		
+
 		// Setting `running` to true, so the game loop can continue
 		running = true;
-		
+
 		// Start main game loop
 		gameLoop();
 	}
-	
+
+
 	// Method that changes the game's values based on player xp
 	@Override
 	public void checkAct() {
