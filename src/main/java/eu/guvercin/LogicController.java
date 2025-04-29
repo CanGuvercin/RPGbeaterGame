@@ -257,30 +257,32 @@ public class LogicController implements GameController {
 	@Override
 	public void shop() {
 		clearConsole();
-		printHeading("Voce encontra um estranho misterioso. \nEle oferece algo a voce:");
+		printHeading("You encounter a mysterious stranger.\nHe offers you something:");
+
 		int price = (int) (Math.random() * (10 + player.getPots() * 3) + 10 + player.getPots());
-		System.out.println("- Pocao Magica: " + price + " ouro.");
+		System.out.println("- Magic Potion: " + price + " gold.");
 		printSeparator(20);
-		
+
 		// Ask the player to buy one
-		System.out.println("Voce quer comprar um?\n(1) Sim!\n(2) Nao, obrigado(a).");
+		System.out.println("Do you want to buy one? Nobody wants to regret in future hah! \n(1) Yes!\n(2) No, thanks.");
 		int input = readInt("-> ", 2);
-		
+
 		// Check if player wants to buy
 		if (input == 1) {
 			clearConsole();
 			// Check if player has enough gold
 			if (player.getGold() >= price) {
-				printHeading("Voce comprou uma pocao magica por " + price + "ouro.");
+				printHeading("You bought a magic potion for " + price + " gold.\nRemaining gold: " + player.getGold());
 				player.setPots(player.getPots() + 1);
 				player.setGold(player.getGold() - price);
 			} else {
-				printHeading("Voce nao possui ouro o suficiente para comprar isso...");
+				printHeading("You don't have enough gold to buy this, you poor bastard.");
 			}
-			
+
 			anythingToContinue();
 		}
 	}
+
 	
 	// Taking a rest
 	@Override
