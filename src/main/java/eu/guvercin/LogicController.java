@@ -75,7 +75,7 @@ public class LogicController implements GameController {
 	
 	// Method to stop the game until user enters anything
 	public static void anythingToContinue() {
-		System.out.println("\nDigite algo para continuar...");
+		System.out.println("\nPress any key to continue...");
 		scanner.next();
 	}
 	
