@@ -131,6 +131,7 @@ public class LogicController implements GameController {
 
 
 	// Method that changes the game's values based on player xp
+	// Progression control
 	@Override
 	public void checkAct() {
 		// Change acts based on xp
@@ -145,17 +146,17 @@ public class LogicController implements GameController {
 			// Story
 			Story.printSecondActIntro();
 			// Assign new values to ENEMIES
-			ENEMIES[0] = "Mercenario Malvado";
+			ENEMIES[0] = "Evil Mercenary";
 			ENEMIES[1] = "Goblin";
-			ENEMIES[2] = "Matilha de Lobos";
-			ENEMIES[3] = "Capanga do Imperador Malvado";
-			ENEMIES[4] = "Estranho Assustador";
+			ENEMIES[2] = "Wolf Pack";
+			ENEMIES[3] = "Evil Emperor's Henchman";
+			ENEMIES[4] = "Creepy Stranger";
 			// Assign new values to ENCOUNTERS
-			ENCOUNTERS[0] = "Batalha";
-			ENCOUNTERS[1] = "Batalha";
-			ENCOUNTERS[2] = "Batalha";
-			ENCOUNTERS[3] = "Descanso";
-			ENCOUNTERS[4] = "Loja";
+			ENCOUNTERS[0] = "Battle";
+			ENCOUNTERS[1] = "Battle";
+			ENCOUNTERS[2] = "Battle";
+			ENCOUNTERS[3] = "Rest";
+			ENCOUNTERS[4] = "Shop";
 		} else if (player.xp >= 50 && act == 2) {
 			act = 3;
 			place = 2;
@@ -167,16 +168,16 @@ public class LogicController implements GameController {
 			Story.printThirdActIntro();
 			// Assign new values to ENEMIES
 			ENEMIES[0] = "Goblin";
-			ENEMIES[1] = "Mercenario Malvado";
-			ENEMIES[2] = "Capanga do Imperador Malvado";
-			ENEMIES[3] = "Capanga do Imperador Malvado";
-			ENEMIES[4] = "Capanga do Imperador Malvado";
+			ENEMIES[1] = "Evil Mercenary";
+			ENEMIES[2] = "Evil Emperor's Henchman";
+			ENEMIES[3] = "Evil Emperor's Henchman";
+			ENEMIES[4] = "Evil Emperor's Henchman";
 			// Assign new values to ENCOUNTERS
-			ENCOUNTERS[0] = "Batalha";
-			ENCOUNTERS[1] = "Batalha";
-			ENCOUNTERS[2] = "Batalha";
-			ENCOUNTERS[3] = "Batalha";
-			ENCOUNTERS[4] = "Loja";
+			ENCOUNTERS[0] = "Battle";
+			ENCOUNTERS[1] = "Battle";
+			ENCOUNTERS[2] = "Battle";
+			ENCOUNTERS[3] = "Battle";
+			ENCOUNTERS[4] = "Shop";
 			// Fully heal the player
 			player.hp = player.maxHP;
 		} else if (player.xp >= 100 && act == 3) {
@@ -202,9 +203,9 @@ public class LogicController implements GameController {
 		int encounter = (int) (Math.random() * ENCOUNTERS.length);
 		
 		// Calling the respective methods
-		if (ENCOUNTERS[encounter].equals("Batalha")) {
+		if (ENCOUNTERS[encounter].equals("Battle")) {
 			randomBattle();
-		} else if (ENCOUNTERS[encounter].equals("Descanso")) {
+		} else if (ENCOUNTERS[encounter].equals("Rest")) {
 			takeRest();
 		} else {
 			shop();
@@ -227,26 +228,26 @@ public class LogicController implements GameController {
 	@Override
 	public void characterInfo() {
 		clearConsole();
-		printHeading("Informacao do personagem");
+		printHeading("Character Information");
 		System.out.println(player.name + "\tHP: " + player.hp + "/" + player.maxHP);
 		printSeparator(20);
 		
 		// Player xp and gold
-		System.out.println("XP: " + player.xp + "\tOuro: " + player.getGold());
+		System.out.println("XP: " + player.xp + "\tGold: " + player.getGold());
 		printSeparator(20);
 		
 		// # Of pots
-		System.out.println("# de pocoes: " + player.getPots());
+		System.out.println("#Potions: " + player.getPots());
 		printSeparator(20);
 		
 		// Printing the chosen traits
 		if (player.getNumAtkUpgrades() > 0) {
-			System.out.println("Caracteristica Ofensiva: " + player.atkUpgrades[player.getNumAtkUpgrades() - 1]);
+			System.out.println("Attack Trait: " + player.atkUpgrades[player.getNumAtkUpgrades() - 1]);
 		}
 		
 		// Printing the chosen traits
 		if (player.getNumDefUpgrades() > 0) {
-			System.out.println("Caracteristica Defensiva: " + player.defUpgrades[player.getNumDefUpgrades() - 1]);
+			System.out.println("Defense Trait: " + player.defUpgrades[player.getNumDefUpgrades() - 1]);
 		}
 		
 		anythingToContinue();
