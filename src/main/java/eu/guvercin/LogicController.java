@@ -320,11 +320,18 @@ public class LogicController implements GameController {
 	@Override
 	public void randomBattle() {
 		clearConsole();
-		printHeading("Voce encontrou uma criatura mal-intencionada. Voce tera que lutar contra ela!");
+
+		// Random enemy creation
+		Enemy enemy = new Enemy(
+				ENEMIES[(int)(Math.random() * ENEMIES.length)],
+				player.xp
+		);
+
+		printHeading("You have encountered a hostile creature: " + enemy.name + "!\n Prepare to die you bastard!");
 		anythingToContinue();
 		
 		// Creating new random enemy
-		battle(new Enemy(ENEMIES[(int)(Math.random() * ENEMIES.length )], player.xp));
+		battle(enemy);
 	}
 	
 	// The main BATTLE method
