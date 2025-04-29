@@ -272,9 +272,9 @@ public class LogicController implements GameController {
 			clearConsole();
 			// Check if player has enough gold
 			if (player.getGold() >= price) {
-				printHeading("You bought a magic potion for " + price + " gold.\nRemaining gold: " + player.getGold());
 				player.setPots(player.getPots() + 1);
 				player.setGold(player.getGold() - price);
+				printHeading("You bought a magic potion for " + price + " gold.\nRemaining gold: " + player.getGold());
 			} else {
 				printHeading("You don't have enough gold to buy this, you poor bastard.");
 			}
