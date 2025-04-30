@@ -382,7 +382,9 @@ public class LogicController implements GameController {
 					clearConsole();
 					printHeading("You defeated " + enemy.name + "!");
 					player.xp += enemy.xp;
-					System.out.println("You gained " + enemy.xp + " XP!");
+					int goldEarned = (int) (Math.random() * (enemy.xp / 2.0 + 1));
+					player.setGold(player.getGold() + goldEarned);
+					System.out.println("You gained " + enemy.xp + " XP and looted " + goldEarned + " gold!");
 					anythingToContinue();
 					break;
 				}
