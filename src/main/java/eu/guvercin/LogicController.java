@@ -103,7 +103,7 @@ public class LogicController implements GameController {
 		// Getting the player name
 		do {
 			clearConsole();
-			printHeading("What is your name?");
+			printHeading("What is your name dear poor victim?");
 			name = scanner.next();
 
 			// Asking the player if he wants to confirm his choice
@@ -294,8 +294,8 @@ public class LogicController implements GameController {
 	public void takeRest() {
 		clearConsole();
 		if(player.getRestsLeft() >= 1) {
-			printHeading("Voce deseja descansar? (" + player.getRestsLeft() + " descanso(s) restante(s)).");
-			System.out.println("(1) Sim\n(2) Nao, agora nao.");
+			printHeading("You want to rest? (" + player.getRestsLeft() + " rest remainder.");
+			System.out.println("(1) Yes\n(2) No, not now.");
 			
 			int input = readInt("-> ", 2);
 			if (input == 1) {
@@ -308,13 +308,13 @@ public class LogicController implements GameController {
 					if (player.hp > player.maxHP) {
 						player.hp = player.maxHP;
 					}
-					System.out.println("Voce descansou e recuperou ate " + hpRestored + " de vida.");
-					System.out.println("Agora voce esta com " + player.hp + "/" + player.maxHP + " de vida.");
+					System.out.println("You recovered " + hpRestored + " hp.");
+					System.out.println("Now you are with " + player.hp + "/" + player.maxHP + " hp.");
 					player.setRestsLeft(player.getRestsLeft() - 1);
 				}
 				
 			} else {
-				System.out.println("Voce esta com a saude completa. Nao precisa descansar agora!");
+				System.out.println("You are in perfect health. There is no need to rest now!");
 			}
 			
 			anythingToContinue();
