@@ -342,133 +342,125 @@ public class LogicController implements GameController {
 			clearConsole();
 			printHeading(enemy.name + "\nHP: " + enemy.hp + "/" + enemy.maxHP);
 			printHeading(player.name + "\nHP: " + player.hp + "/" + player.maxHP);
-			System.out.println("Escolha uma acao:");
+			System.out.println("Choose an action:");
 			printSeparator(20);
-			System.out.println("(1) Lutar\n(2) Usar Pocao\n(3) Fugir");
+			System.out.println("(1) Fight\n(2) Use Potion\n(3) Run Away");
+
 			int input = readInt("-> ", 3);
-			
-			// React accordingly to player input
+
 			if (input == 1) {
 				// FIGHT
-				// Calculate the dmg and dmgTook (dmg enemy deals to player)
 				int dmg = player.attack() - enemy.defend();
 				int dmgTook = enemy.attack() - player.defend();
-				// Check that dmg and dmgTook isn't negative
+
 				if (dmgTook < 0) {
-					// Add some dmg if the player defends very well
 					dmg -= dmgTook / 2;
 					dmgTook = 0;
 				}
-				if (dmg < 0) {
-					dmg = 0;
-				}
-				// Deal dmg to both parties
+
+				if (dmg < 0) dmg = 0;
+
 				player.hp -= dmgTook;
 				enemy.hp -= dmg;
-				
-				// Print the info of this battle round
+
 				clearConsole();
-				printHeading("BATALHA");
-				System.out.println("Voce causou " + dmg + " de dano ao " + enemy.name + ".");
+				printHeading("BATTLE");
+				System.out.println("You dealt " + dmg + " damage to " + enemy.name + ".");
 				printSeparator(15);
-				System.out.println("O " + enemy.name + " causou " + dmgTook + " de dano a voce.");
+				System.out.println(enemy.name + " dealt " + dmgTook + " damage to you.");
 				anythingToContinue();
-				// Check if the player is still alive or dead
+
 				if (player.hp <= 0) {
-					playerDied(); // Method to end the game
+					playerDied();
 					break;
 				} else if (enemy.hp <= 0) {
-					// Tell the player won
 					clearConsole();
-					printHeading("Voce derrotou o " + enemy.name + "!");
-					// Increase	player xp
+					printHeading("You defeated " + enemy.name + "!");
 					player.xp += enemy.xp;
-					System.out.println("Voce ganhou " + enemy.xp + " XP!");
+					System.out.println("You gained " + enemy.xp + " XP!");
 					anythingToContinue();
 					break;
 				}
 			} else if (input == 2) {
-				// Use Potion
+				// USE POTION
 				clearConsole();
 				if (player.getPots() > 0 && player.hp < player.maxHP) {
-					// Player CAN take a potion
-					// Make sure player wants to drink the potion
-					System.out.println("Voce quer beber a pocao? (" + player.getPots() + " restante).");
-					System.out.println("(1) Sim\n(2) Nao, talvez mais tarde");
-					
+					System.out.println("Do you want to drink a potion? (" + player.getPots() + " left)");
+					System.out.println("(1) Yes\n(2) No, maybe later");
+
 					input = readInt("-> ", 2);
 					if (input == 1) {
-						// Player actually took it
 						player.hp = player.maxHP;
 						clearConsole();
-						printHeading("Voce bebeu uma pocao magica. Ela restaurou sua saude para " + player.maxHP);
-						// Random drops
+						printHeading("You drank a magic potion. It restored your health to " + player.maxHP);
+
 						boolean addRest = (Math.random() * 5 + 1 <= 2.25);
 						int goldEarned = (int) (Math.random() * enemy.xp);
-						
+
 						if (addRest) {
 							player.setRestsLeft(player.getRestsLeft() + 1);
-							System.out.println("Voce ganhou a chance de descansar mais uma vez!");
+							System.out.println("You gained an extra rest opportunity!");
 						}
-						
+
 						if (goldEarned > 0) {
 							player.setGold(player.getGold() + goldEarned);
-							System.out.println("Voce coletou " + goldEarned + " ouro do cadaver do " + enemy.name);
+							System.out.println("You looted " + goldEarned + " gold from the corpse of " + enemy.name);
 						}
+
 						anythingToContinue();
 						break;
 					}
 				} else {
-					// Player CANNOT take a potion
-					printHeading("Voce nao tem pocoes ou ja esta com a saude completa.");
+					printHeading("You have no potions or your health is already full.");
 					anythingToContinue();
 				}
 			} else {
 				// RUN AWAY
 				clearConsole();
-				// Check that player isn't in last act (final boss battle)
 				if (act != 4) {
-					// Chance of 35% to escape
+					// 35% chance to escape
 					if (Math.random() * 10 + 1 <= 3.5) {
-						printHeading("Voce fugiu do " + enemy.name + "!");
+						printHeading("You successfully escaped from " + enemy.name + "!");
 						anythingToContinue();
 						break;
 					} else {
-						printHeading("Voce nao conseguiu escapar.");
-						// Calculate damage the player take
+						printHeading("You failed to escape.");
 						int dmgTook = enemy.attack();
-						System.out.println("Com pressa, voce sofreu 0 " + dmgTook + " de dano!");
+						System.out.println("While rushing away, you took " + dmgTook + " damage!");
+						player.hp -= dmgTook;
 						anythingToContinue();
-						// Check if player's still alive
 						if (player.hp <= 0) {
 							playerDied();
+							break;
 						}
 					}
 				} else {
-					printHeading("VOCE NAO PODE FUGIR DO IMPERADOR MALVADO!");
+					printHeading("YOU CANNOT RUN FROM THE EVIL EMPEROR!");
 					anythingToContinue();
 				}
 			}
 		}
 	}
-	
+
+
 	// Printing the main menu
 	@Override
 	public void printMenu() {
 		clearConsole();
-		printHeading(PLACES[place]);
-		System.out.println("Escolha uma acao:");
+		printHeading(PLACES[place]); // Current location name
+		System.out.println("Choose an action:");
 		printSeparator(20);
-		System.out.println("(1) Continue em sua jornada");
-		System.out.println("(2) Informacao do personagem");
-		System.out.println("(3) Sair do jogo");
+		System.out.println("(1) Continue your journey");
+		System.out.println("(2) View character info");
+		System.out.println("(3) Exit the game");
 	}
-	
+
+
 	// The final (last) battle of the entire game
 	@Override
 	public void finalBattle() {
-		// Creating the Imperado Malvado and letting the player fight against him
-		battle(new Enemy("IMPERADO MALVADO", 200));
+		// Creating the Evil Emperor and letting the player fight against him
+		battle(new Enemy("SHADOW EMPEROR", 200));
 		
 		// Printing the proper ending
 		if (player.hp > 0) {
@@ -484,12 +476,12 @@ public class LogicController implements GameController {
 	@Override
 	public void playerDied() {
 		clearConsole();
-		printHeading("Voce morreu...");
-		printHeading("Voce ganhou " + player.xp + " XP em sua jornada. Tente ganhar mais da proxima vez!");
-		printHeading("Obrigado por jogar o meu jogo. Espero que tenha gostado :)");
+		printHeading("You died like a rat...");
+		printHeading("You earned " + player.xp + " as nothing. XP during your poor journey. Try to be a man on your score next time!");
+		printHeading("EMPEROR ALWAYS WINS you poor rat!");
 		running = false;
 	}
-	
+
 	// Main game loop
 	@Override
 	public void gameLoop() {
