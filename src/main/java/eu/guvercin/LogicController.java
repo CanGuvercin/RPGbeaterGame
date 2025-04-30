@@ -20,7 +20,7 @@ public class LogicController implements GameController {
 	public static final String[] PLACES = {
 			"Eternal Mountains",
 			"Haunted Lands",
-			"Castle of the Evil Emperor",
+			"Castle of the Shadow Emperor",
 			"Throne Room"
 	};
 
