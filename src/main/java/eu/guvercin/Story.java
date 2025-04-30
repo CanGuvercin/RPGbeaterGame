@@ -1,117 +1,122 @@
 package eu.guvercin;
 
-// Class that does nothing but storing methods to print out every part of the story
+// Class that stores methods to print out every part of the story
 public class Story {
 
-	public static void printIntro() {
+    public static void printIntro() {
         LogicController.clearConsole();
         LogicController.printSeparator(30);
-        System.out.println("Historia");
+        System.out.println("Story");
         LogicController.printSeparator(30);
-        System.out.println("Voce e o ultimo homem em pe depois que sua vila foi atacada pelos capangas do imperador malvado.");
-        System.out.println("Cada um de seus amigos, familiares e vizinhos foi assassinado. Voce esta em pe nas ruinas queimando.");
-        System.out.println("Tudo o que voce quer agora e vinganca, entao voce comeca a planejar sua jornada para derrotar o imperador malvado e libertar as terras!");
+        System.out.println("You are the last man standing after your village was raided by the Evil Emperor's cavalries.");
+        System.out.println("Every one of your friends, family, and neighbors was slaughtered. Your wife has taken, raped and killed.");
+        System.out.println("Your son's head is hanging over the tree. You stand alone in the burning ruins.");
+        System.out.println("Now, all you seek is revenge. You begin your journey without any planning to defeat the Evil Emperor and free the land!");
         LogicController.anythingToContinue();
     }
 
     public static void printFirstActIntro() {
         LogicController.clearConsole();
         LogicController.printSeparator(30);
-        System.out.println("ATO I - INTRODUCAO");
+        System.out.println("ACT I - Intro the FACE THE FEAR");
         LogicController.printSeparator(30);
-        System.out.println("A medida que voce comeca sua jornada, comeca a viajar pelas florestas proximas para alcancar as montanhas eternas.");
-        System.out.println("As montanhas eternas sao um lugar muito perigoso. Diz-se que ninguem voltou vivo de la.");
-        System.out.println("\nDepois de um longo dia caminhando pelas florestas, voce finalmente chega as montanhas eternas.");
-        System.out.println("Voce nao se importa com as coisas que ouviu sobre esse lugar perigoso e comeca sua jornada para derrotar o mal.");
+        System.out.println("As your vengeance begins, you pass through nearby forests toward the Eternal Mountains.");
+        System.out.println("The Eternal Mountains are a dangerous place. It is said that no one has returned alive. But, you are already a dead man.");
+        System.out.println("\nAfter a long day of walking, you finally reach the mountain.");
+        System.out.println("You don’t care about the rumors. You don't have anyting to lose on this point. You are determined to defeat evil or die on this holy effort, and begin your climb.");
         LogicController.anythingToContinue();
     }
 
     public static void printFirstActOutro() {
         LogicController.clearConsole();
         LogicController.printSeparator(30);
-        System.out.println("ATO I - CONCLUSAO");
+        System.out.println("ACT I - FACE THE FEAR Completed");
         LogicController.printSeparator(30);
-        System.out.println("Voce conseguiu! Voce atravessou as montanhas eternas e ainda esta vivo!");
-        System.out.println("Ao descer a ultima colina, voce esta mais do que feliz em sentir o chao duro sob seus pes novamente.");
-        System.out.println("\nVoce se sente fortalecido e a experiencia que ganhou permite que voce aprenda mais uma habilidade!");
+        System.out.println("You made it! You crossed the Eternal Mountains and lived to die another day");
+        System.out.println("As you descend the last hill, you feel relieved to stand on solid ground again.");
+        System.out.println("\nYou feel anger, rage, power, and the experience you gained allows you to learn a new skill!");
         LogicController.anythingToContinue();
     }
 
     public static void printSecondActIntro() {
         LogicController.clearConsole();
         LogicController.printSeparator(30);
-        System.out.println("ATO II - INTRODUCAO");
+        System.out.println("ACT II - Intro to SLAUGHTERED MONSTERS");
         LogicController.printSeparator(30);
-        System.out.println("Voce comeca a viajar pelas terras deste campo uma vez bem povoado.");
-        System.out.println("Voce coletou algum ouro dos monstros que matou ao longo do caminho.");
-        System.out.println("Felizmente, voce sabe que de vez em quando um comerciante viajante passa por essas terras.");
-        System.out.println("Voce sabe exatamente onde fica o castelo do imperador malvado, mas precisa atravessar essas terras assombradas primeiro...");
+        System.out.println("You travel through once-populated lands, now barren and cursed.");
+        System.out.println("You collected some gold from the monsters you defeated, burned, slaughtered along the way.");
+        System.out.println("Luckily, traveling slave miners are known to pass through these lands.");
+        System.out.println("You know exactly where the Shadow Emperor's castle is—but first, you must cross the cursed wastelands...");
         LogicController.anythingToContinue();
     }
 
     public static void printSecondActOutro() {
         LogicController.clearConsole();
         LogicController.printSeparator(30);
-        System.out.println("ATO II - CONCLUSAO");
+        System.out.println("ACT II - SLAUGHTERED MONSTERS completed");
         LogicController.printSeparator(30);
-        System.out.println("Voce conseguiu atravessar essas terras assombradas e ainda esta vivo!");
-        System.out.println("Voce esta a apenas algumas horas de seu destino final; o castelo do Imperador Malvado!");
-        System.out.println("Voce sabe que provavelmente nao podera descansar la, entao faz uma ultima pausa para restaurar a saude.");
-        System.out.println("\nDepois de tudo o que voce viu, voce se sente mais confiante em aprender mais uma habilidade.");
+        System.out.println("You successfully crossed the cursed wastelands and survived!");
+        System.out.println("You’re just a few hours away from your final destination: the Shadow Emperor’s Castle!");
+        System.out.println("Knowing you won’t get another chance to rest, you take a final breath to restore your strength.");
+        System.out.println("\nAfter everything you’ve seen, you feel confident enough to gain another skill.");
         LogicController.anythingToContinue();
     }
-        
+
     public static void printThirdActIntro() {
         LogicController.clearConsole();
         LogicController.printSeparator(30);
-        System.out.println("ATO III - INTRODUCAO");
+        System.out.println("ACT III - Intro to STUBBORN TO CASTLE");
         LogicController.printSeparator(30);
-        System.out.println("Voce ve o enorme castelo negro a sua frente.");
-        System.out.println("Enquanto voce fica em frente aos portoes, sabe que nao ha como voltar atras.");
-        System.out.println("Voce esta disfarcado como um mercenario e entra no castelo. Voce nao sabe quanto tempo resta antes que alguem desconfie.");
-        System.out.println("Tudo o que voce pode fazer agora e lutar por sua vida e rezar para sair vencedor...");
+        System.out.println("You see the massive dark castle in the distance.");
+        System.out.println("As you stand before the gates, you know there is no turning back.");
+        System.out.println("Disguised as slave miners, you enter the castle. You don’t know how long you have before someone suspects you.");
+        System.out.println("All you can do now is fight for your life and hope to die like a man...");
         LogicController.anythingToContinue();
     }
-        
+
     public static void printThirdActOutro() {
         LogicController.clearConsole();
         LogicController.printSeparator(30);
-        System.out.println("ATO III - CONCLUSAO");
+        System.out.println("ACT III - STUBBORN TO CASTLE completed");
         LogicController.printSeparator(30);
-        System.out.println("Voce chegou tao longe. Voce derrotou todos os lacaios do Imperador Malvado.");
-        System.out.println("Enquanto fica em frente a porta da sala do trono, sabe que nao ha como voltar atras.");
-        System.out.println("Voce se lembra do seu poder perdido e restaura a saude.");
-        System.out.println("Voce tem a chance de aprender uma ultima habilidade antes de entrar na sala do trono.");
+        System.out.println("You've come so far. You've defeated all of the Shadow Emperor’s cavalry officer who is responsible for the nighmare raid on your village..");
+        System.out.println("You take a break and start to eat some parts of the officers body to push your vengeance feelings.");
+        System.out.println("Now you stand before the throne room gate with blood gold colours. There is no turning back.");
+        System.out.println("You remember your strength and restore your health.");
+        System.out.println("You now have the chance to gain one final skill before stepping inside...");
         LogicController.anythingToContinue();
     }
-        
+
     public static void printFourthActIntro() {
         LogicController.clearConsole();
         LogicController.printSeparator(30);
-        System.out.println("ATO IV - INTRODUCAO");
+        System.out.println("ACT IV - RESOLUTION");
         LogicController.printSeparator(30);
-        System.out.println("Voce entra na sala do trono do Imperador Malvado.");
-        System.out.println("Ele olha diretamente nos seus olhos. Voce sente a escuridao ao seu redor.");
-        System.out.println("Ele puxa a espada sagrada da escuridao, a arma mais poderosa conhecida pelo homem.");
-        System.out.println("Tudo o que voce pode fazer agora e lutar por sua vida e rezar para sair vencedor...");
+        System.out.println("You enter the Shadow Emperor’s throne room.");
+        System.out.println("He stares directly into your eyes. You feel the darkness surrounding you.");
+        System.out.println("He draws the Sacred Sword of Darkness—said to be the most powerful weapon known to man.");
+        System.out.println("All you can do now is fight with all your might and pray to show a respectable fight...");
         LogicController.anythingToContinue();
     }
-        
+
     public static void printEndWin(Player player) {
         LogicController.clearConsole();
         LogicController.printSeparator(30);
-        System.out.println("Parabens, " + player.name + "! Voce derrotou o Imperador Malvado e salvou o mundo!");
+        System.out.println("Congratulations, " + player.name + "! You have defeated the Shadow Emperor and took your vengeance!");
         LogicController.printSeparator(30);
-        System.out.println("Este jogo foi desenvolvido por Kaue Eduardo, APS - UNIP");
-        System.out.println("Espero que voce tenha gostado!");
+        System.out.println("This game was originally developed by Kaue Eduardo, APS - UNIP");
+        System.out.println("English version & adaptation & story modifications by Mustafa Can Güvercin");
+        System.out.println("Hope you enjoyed it!");
     }
-    
+
     public static void prinEndLose() {
         LogicController.clearConsole();
         LogicController.printSeparator(30);
-        System.out.println("Infelizmente, voce morreu. O Imperador Malvado te derrotou e voce nao conseguiu salvar o mundo!");
+        System.out.println("Sadly, you have fallen. The Shadow Emperor has defeated you.");
+        System.out.println("As you bleed out, he smirks. 'I was there,' he says, and begins to describe your wife's last moments for his own amusement.");
         LogicController.printSeparator(30);
-        System.out.println("Este jogo foi desenvolvido por Kaue Eduardo, APS - UNIP");
-        System.out.println("Espero que voce tenha gostado!");
+        System.out.println("This game was originally developed by Kaue Eduardo, APS - UNIP");
+        System.out.println("English version & adaptation & story modifications by Mustafa Can Güvercin ");
+        System.out.println("Hope you still had a good time!");
     }
 }

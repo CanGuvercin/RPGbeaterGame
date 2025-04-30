@@ -37,7 +37,7 @@ public class LogicController implements GameController {
 				input = Integer.parseInt(scanner.next());
 			} catch(Exception err) {
 				input = -1;
-				System.out.println("Por favor, insira um numero inteiro!");
+				System.out.println("Please enter a valid number!");
 			}
 		} while(input < 1 || input > userChoices);
 		
@@ -86,13 +86,18 @@ public class LogicController implements GameController {
 		String name;
 
 		// Print title screen
-		// clearConsole(); // İstersen aktif edebilirsin
+		clearConsole();
 		printSeparator(40);
-		printSeparator(30);
-		System.out.println("EMPEROR MAY CRY");
-		System.out.println("RPG GAME TO BEAT EVIL EMPEROR");
-		printSeparator(30);
+		System.out.println(" ███████╗███╗   ███╗██████╗ ███████╗██████╗  ██████╗ ██████╗ ");
+		System.out.println(" ██╔════╝████╗ ████║██╔══██╗██╔════╝██╔══██╗██╔═══██╗██╔══██╗");
+		System.out.println(" █████╗  ██╔████╔██║██████╔╝█████╗  ██████╔╝██║   ██║██████╔╝");
+		System.out.println(" ██╔══╝  ██║╚██╔╝██║██╔═══╝ ██╔══╝  ████╔═╝ ██║   ██║████╔═╝ ");
+		System.out.println(" ███████╗██║ ╚═╝ ██║██║     ███████╗██║ ██║ ╚██████╔╝██║ ██║ ");
+		System.out.println(" ╚══════╝╚═╝     ╚═╝╚═╝     ╚══════╝╚═╝ ╚═╝  ╚═════╝ ╚═╝ ╚═╝ ");
+		System.out.println();
+		System.out.println("           REVENGE FANTASY RPG  •  PREPARE TO DIE LIKE A RAT      ");
 		printSeparator(40);
+		System.out.println("         PRESS ANY KEY TO BEGIN YOUR VENGEANCE              ");
 		anythingToContinue();
 
 		// Getting the player name
