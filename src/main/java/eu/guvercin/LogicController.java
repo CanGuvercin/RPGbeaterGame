@@ -7,7 +7,7 @@ public class LogicController implements GameController {
 	private static Scanner scanner = new Scanner(System.in);
 	private static boolean running;
 	static Player player;
-	
+	//sd
 	// Constants -> Random ENCOUNTERS, Enemy names and Story elements
 	private static final String[] ENCOUNTERS = {
 			"Battle", "Battle", "Battle", "Rest", "Rest"
