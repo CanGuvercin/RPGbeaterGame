@@ -119,4 +119,32 @@ public class Story {
         System.out.println("English version & adaptation & story modifications by Mustafa Can Güvercin ");
         System.out.println("Hope you still had a good time!");
     }
+
+
+    public static void printBonusActIntro() {
+        LogicController.clearConsole();
+        LogicController.printSeparator(30);
+        System.out.println("BONUS ACT - THE UNSEEN PUPPETMASTER");
+        LogicController.printSeparator(30);
+        System.out.println("Just when you think it's over, a deep laugh echoes through the ruined throne room...");
+        System.out.println("The body of the Shadow Emperor begins to twitch—and then collapses into a pile of dust.");
+        System.out.println("A dark figure steps out of the shadows. 'Fool,' he whispers. 'The Emperor was merely my vessel.'");
+        System.out.println("This being... is the Puppetmaster. A forgotten god who fed off human hatred and despair.");
+        System.out.println("You realize your entire journey, your pain, was orchestrated. You were *meant* to come here...");
+        System.out.println("But you’re no longer a pawn. You grip your weapon tighter. One final fight begins—for the fate of mankind.");
+        LogicController.anythingToContinue();
+    }
+
+    public static void printBonusActOutro() {
+        LogicController.clearConsole();
+        LogicController.printSeparator(30);
+        System.out.println("BONUS ACT - THE UNSEEN PUPPETMASTER Completed");
+        LogicController.printSeparator(30);
+        System.out.println("You strike down the Puppetmaster with a divine fury born of suffering and hope.");
+        System.out.println("His essence screams as it fades, his curse broken. Light pours into the castle.");
+        System.out.println("Your journey of revenge became something greater—a legend of liberation.");
+        System.out.println("Though you remain scarred, the land begins to heal. Peace, at last, feels possible.");
+        LogicController.anythingToContinue();
+    }
+
 }
