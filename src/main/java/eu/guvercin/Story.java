@@ -143,6 +143,7 @@ public class Story {
         System.out.println("You strike down the Puppetmaster with a divine fury born of suffering and hope.");
         System.out.println("His essence screams as it fades, his curse broken. Light pours into the castle.");
         System.out.println("Your journey of revenge became something greater—a legend of liberation.");
+        System.out.println("You will become a legend");
         System.out.println("Though you remain scarred, the land begins to heal. Peace, at last, feels possible.");
         LogicController.anythingToContinue();
     }
